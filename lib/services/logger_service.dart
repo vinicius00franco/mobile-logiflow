@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/foundation.dart';
 
 /// Serviço de logging para arquivo
 class LoggerService {
@@ -31,7 +32,7 @@ class LoggerService {
         );
       }
     } catch (e) {
-      print('Erro ao inicializar logger: $e');
+      debugPrint('Erro ao inicializar logger: $e');
     }
   }
 
@@ -49,9 +50,9 @@ class LoggerService {
       await _logFile?.writeAsString(logEntry, mode: FileMode.append);
 
       // Também imprimir no console para debug
-      print('[$domain] $message');
+      debugPrint('[$domain] $message');
     } catch (e) {
-      print('Erro ao escrever log: $e');
+      debugPrint('Erro ao escrever log: $e');
     }
   }
 
@@ -77,7 +78,7 @@ class LoggerService {
         }
       }
     } catch (e) {
-      print('Erro ao limpar logs antigos: $e');
+      debugPrint('Erro ao limpar logs antigos: $e');
     }
   }
 }

@@ -6,7 +6,7 @@ class AppColors {
   static const secondary = Color(0xFF00D9A3); // Verde
   static const accent = Color(0xFF1DB954); // Verde claro
   static const background = Color(0xFFF5F5F5); // Cinza claro
-  static const cardBackground = Colors.white;
+  static const cardBackground = Color(0xFFFFFFFF);
 
   // Status
   static const disponivel = Color(0xFF4CAF50); // Verde
@@ -18,6 +18,29 @@ class AppColors {
   static const textPrimary = Color(0xFF000000);
   static const textSecondary = Color(0xFF757575);
   static const textLight = Color(0xFFFFFFFF);
+
+  // Component colors
+  static const progressActive = Color(0xFF2196F3); // Azul padrão para progresso
+  static const progressInactive = Color(0xFFE0E0E0); // Cinza claro para progresso inativo
+
+  // Shadows (alpha variations)
+  static const shadow15 = Color(0x0F000000); // preto com alpha 15
+  static const shadow25 = Color(0x19000000); // preto com alpha 25
+  static const shadow50 = Color(0x32000000); // preto com alpha 50
+  static const shadow100 = Color(0x64000000); // preto com alpha 100
+
+  // Greys usados no mapa
+  static const grey300 = Color(0xFFE0E0E0);
+  static const grey400 = Color(0xFFBDBDBD);
+  static const grey500 = Color(0xFF9E9E9E);
+  static const grey600 = Color(0xFF757575);
+  static const grey800 = Color(0xFF424242);
+
+  // Utilitários
+  static const transparent = Color(0x00000000);
+
+  // Preto com opacidades comuns
+  static const black70 = Color.fromRGBO(0, 0, 0, 0.7);
 }
 
 // Espaçamentos

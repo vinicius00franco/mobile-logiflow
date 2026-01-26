@@ -20,14 +20,14 @@ class DriverCardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppBorderRadius.large),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withAlpha(15),
+            color: AppColors.shadow15,
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
         ],
       ),
       child: Material(
-        color: Colors.transparent,
+        color: AppColors.transparent,
         child: InkWell(
           onTap: onTap,
           borderRadius: BorderRadius.circular(AppBorderRadius.large),

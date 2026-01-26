@@ -9,6 +9,8 @@ import '../data/mock_drivers_data.dart';
 
 part 'driver_store.g.dart';
 
+// Ignore linter rule: exposição de tipo privado via MobX class alias
+// ignore: library_private_types_in_public_api
 class DriverStore = _DriverStore with _$DriverStore;
 
 // Classe auxiliar para rastrear deslocamento

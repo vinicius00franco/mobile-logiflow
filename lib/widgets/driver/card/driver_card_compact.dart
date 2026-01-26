@@ -44,7 +44,7 @@ class DriverCardCompact extends StatelessWidget {
               border: Border.all(
                 color: isSelected
                     ? getStatusColor(driver.status)
-                    : Colors.transparent,
+                    : AppColors.transparent,
                 width: 2,
               ),
             ),
@@ -166,7 +166,7 @@ class DriverCardCompact extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.cardBackground,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(AppBorderRadius.large),

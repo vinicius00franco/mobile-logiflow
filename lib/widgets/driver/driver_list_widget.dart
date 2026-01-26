@@ -53,14 +53,14 @@ class _DriverListWidgetState extends State<DriverListWidget> {
         return Container(
           height: containerHeight,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.cardBackground,
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(AppBorderRadius.large),
               topRight: Radius.circular(AppBorderRadius.large),
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withAlpha(25),
+                color: AppColors.shadow25,
                 blurRadius: 10,
                 offset: const Offset(0, -5),
               ),

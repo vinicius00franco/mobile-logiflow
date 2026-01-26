@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../constants/app_design.dart';
 
 /// Widget de barra de progresso para indicar navegação entre motoristas
 ///
@@ -28,7 +29,7 @@ class DriverProgressBar extends StatelessWidget {
             height: 8,
             width: isActive ? 30 : 12,
             decoration: BoxDecoration(
-              color: isActive ? Colors.blue : Colors.grey[300],
+              color: isActive ? AppColors.progressActive : AppColors.progressInactive,
               borderRadius: BorderRadius.circular(4),
             ),
           );

@@ -15,7 +15,12 @@ final List<Position> mockDestinos = [
   Position(-23.6132, -46.6987), // Brooklin
 ];
 
-final List<String> mockNomes = ['João Silva', 'Maria Santos', 'Pedro Costa', 'Ana Oliveira'];
+final List<String> mockNomes = [
+  'João Silva',
+  'Maria Santos',
+  'Pedro Costa',
+  'Ana Oliveira',
+];
 
 final List<String> mockVeiculos = ['Moto', 'Carro', 'Moto +', 'Carro +'];
 

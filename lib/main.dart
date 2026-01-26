@@ -4,6 +4,7 @@ import 'stores/driver_store.dart';
 import 'models/driver.dart' as model;
 import 'screens/home_screen.dart';
 import 'services/logger_service.dart';
+import 'constants/app_design.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,10 +35,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Monitor de Logística',
         theme: ThemeData(
-          primaryColor: Colors.black,
+          primaryColor: AppColors.primary,
           colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: Colors.black,
-            secondary: Colors.green,
+            primary: AppColors.primary,
+            secondary: AppColors.secondary,
           ),
         ),
         home: HomeScreen(),

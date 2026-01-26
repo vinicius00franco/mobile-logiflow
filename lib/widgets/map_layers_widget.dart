@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import '../constants/map_constants.dart';
+import '../constants/app_design.dart';
 import '../models/driver.dart' as model;
 import '../utils/map_utils.dart';
 
@@ -54,11 +55,11 @@ class MapLayersWidget extends StatelessWidget {
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.cardBackground,
                     borderRadius: BorderRadius.circular(4),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withAlpha(50),
+                        color: AppColors.shadow50,
                         blurRadius: 4,
                       ),
                     ],
@@ -76,7 +77,7 @@ class MapLayersWidget extends StatelessWidget {
                   color: getStatusColor(driver.status),
                   size: 32,
                   shadows: [
-                    Shadow(color: Colors.black.withAlpha(100), blurRadius: 4),
+                    Shadow(color: AppColors.shadow100, blurRadius: 4),
                   ],
                 ),
               ],
@@ -96,12 +97,12 @@ class MapLayersWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: markerColors['origin']!,
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 2),
+              border: Border.all(color: AppColors.cardBackground, width: 2),
               boxShadow: [
-                BoxShadow(color: Colors.black.withAlpha(50), blurRadius: 4),
+                BoxShadow(color: AppColors.shadow50, blurRadius: 4),
               ],
             ),
-            child: Icon(Icons.location_on, color: Colors.white, size: 20),
+            child: Icon(Icons.location_on, color: AppColors.textLight, size: 20),
           ),
         ),
       );
@@ -116,12 +117,12 @@ class MapLayersWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: markerColors['destination']!,
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 2),
+              border: Border.all(color: AppColors.cardBackground, width: 2),
               boxShadow: [
-                BoxShadow(color: Colors.black.withAlpha(50), blurRadius: 4),
+                BoxShadow(color: AppColors.shadow50, blurRadius: 4),
               ],
             ),
-            child: Icon(Icons.flag, color: Colors.white, size: 20),
+            child: Icon(Icons.flag, color: AppColors.textLight, size: 20),
           ),
         ),
       );
@@ -134,8 +135,9 @@ class MapLayersWidget extends StatelessWidget {
     final v = veiculo.toLowerCase();
     if (v.contains('moto')) return Icons.two_wheeler_rounded;
     if (v.contains('van')) return Icons.airport_shuttle_rounded;
-    if (v.contains('caminhão') || v.contains('caminhao'))
+    if (v.contains('caminhão') || v.contains('caminhao')) {
       return Icons.local_shipping_rounded;
+    }
     return Icons.directions_car_filled_rounded;
   }
 
@@ -158,7 +160,7 @@ class MapLayersWidget extends StatelessWidget {
               strokeWidth: 4.0,
               color: routeColor,
               borderStrokeWidth: 2.0,
-              borderColor: Colors.white,
+              borderColor: AppColors.cardBackground,
             ),
           );
 
@@ -222,9 +224,9 @@ class MapLayersWidget extends StatelessWidget {
     // Para mapas claros (Uber Light), usar preto
     // Para mapas escuros (Uber Dark), usar cinza
     if (mapStyle.contains('Dark') || mapStyle.contains('dark')) {
-      return Colors.grey.shade400; // Cinza para mapas escuros
+      return AppColors.grey400; // Cinza para mapas escuros
     } else {
-      return Colors.black; // Preto para mapas claros
+      return AppColors.primary; // Preto para mapas claros
     }
   }
 
@@ -232,14 +234,14 @@ class MapLayersWidget extends StatelessWidget {
     if (mapStyle.contains('Dark') || mapStyle.contains('dark')) {
       // Cores para mapas escuros
       return {
-        'origin': Colors.grey.shade600, // Cinza escuro para origem
-        'destination': Colors.grey.shade500, // Cinza médio para destino
+        'origin': AppColors.grey600, // Cinza escuro para origem
+        'destination': AppColors.grey500, // Cinza médio para destino
       };
     } else {
       // Cores para mapas claros
       return {
-        'origin': Colors.black, // Preto para origem
-        'destination': Colors.grey.shade800, // Cinza escuro para destino
+        'origin': AppColors.primary, // Preto para origem
+        'destination': AppColors.grey800, // Cinza escuro para destino
       };
     }
   }

@@ -10,6 +10,7 @@ import '../widgets/driver/driver_list_widget.dart';
 import '../widgets/map_layers_widget.dart';
 import '../widgets/driver/driver_progress_bar.dart';
 import '../widgets/driver/select_driver_modal.dart';
+import '../constants/app_design.dart';
 
 // Tela do mapa que exibe a localização dos motoristas e permite interação com o mapa
 class MapScreen extends StatefulWidget {
@@ -91,7 +92,7 @@ class _MapScreenState extends State<MapScreen> {
       showModalBottomSheet(
         context: context,
         isScrollControlled: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         builder: (context) => SelectDriverModal(
           drivers: selectedDrivers,
           onDriverSelected: (driver) {
@@ -135,14 +136,14 @@ class _MapScreenState extends State<MapScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: CircleAvatar(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.cardBackground,
             child: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.black),
+              icon: const Icon(Icons.arrow_back, color: AppColors.primary),
               padding: EdgeInsets.zero,
               onPressed: () => Navigator.pop(context),
             ),
@@ -208,13 +209,13 @@ class _MapScreenState extends State<MapScreen> {
                             vertical: 6,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.black.withValues(alpha: 0.7),
+                            color: AppColors.black70,
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
                             _currentMapStyle,
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: AppColors.textLight,
                               fontSize: 12,
                             ),
                           ),
@@ -224,9 +225,9 @@ class _MapScreenState extends State<MapScreen> {
                         FloatingActionButton(
                           heroTag: 'mapStyleButton',
                           onPressed: _changeMapStyle,
-                          backgroundColor: Colors.white,
+                          backgroundColor: AppColors.cardBackground,
                           tooltip: 'Alterar estilo do mapa',
-                          child: const Icon(Icons.map, color: Colors.black),
+                          child: const Icon(Icons.map, color: AppColors.primary),
                         ),
                         const SizedBox(height: 8),
                         // Botão flutuante para seguir motorista
@@ -243,8 +244,8 @@ class _MapScreenState extends State<MapScreen> {
                                   ? () => _handleFollowButtonPress(driverStore)
                                   : null,
                               backgroundColor: isFollowing
-                                  ? Colors.blue
-                                  : Colors.white,
+                                  ? AppColors.progressActive
+                                  : AppColors.cardBackground,
                               tooltip: isFollowing
                                   ? 'Parar de seguir'
                                   : 'Seguir veículo',
@@ -253,8 +254,8 @@ class _MapScreenState extends State<MapScreen> {
                                     ? Icons.gps_fixed
                                     : Icons.gps_not_fixed,
                                 color: isFollowing
-                                    ? Colors.white
-                                    : Colors.black,
+                                    ? AppColors.textLight
+                                    : AppColors.primary,
                               ),
                             );
                           },
