@@ -5,6 +5,7 @@ import '../models/driver.dart';
 import '../services/routing_service.dart';
 import '../services/geocoding_service.dart';
 import '../services/logger_service.dart';
+import '../data/mock_drivers_data.dart';
 
 part 'driver_store.g.dart';
 
@@ -84,24 +85,12 @@ abstract class _DriverStore with Store {
   }
 
   void _initializeDrivers() async {
-    // Localizações reais de São Paulo
-    final origens = [
-      Position(-23.5505, -46.6333), // Centro
-      Position(-23.5629, -46.6544), // Av Paulista
-      Position(-23.5475, -46.6361), // República
-      Position(-23.5475, -46.7355), // Pinheiros
-    ];
-
-    final destinos = [
-      Position(-23.5880, -46.6592), // Vila Mariana
-      Position(-23.5328, -46.6394), // Santana
-      Position(-23.5740, -46.6826), // Jardins
-      Position(-23.6132, -46.6987), // Brooklin
-    ];
-
-    final nomes = ['João Silva', 'Maria Santos', 'Pedro Costa', 'Ana Oliveira'];
-    final veiculos = ['Moto', 'Carro', 'Moto +', 'Carro +'];
-    final precos = [4000.0, 24000.0, 6000.0, 35000.0];
+    // Usar dados mockados de arquivo separado
+    final origens = mockOrigens;
+    final destinos = mockDestinos;
+    final nomes = mockNomes;
+    final veiculos = mockVeiculos;
+    final precos = mockPrecos;
 
     // Criar drivers temporários sem rotas
     final tempDrivers = <Driver>[];
