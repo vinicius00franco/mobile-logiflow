@@ -3,8 +3,8 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import '../stores/driver_store.dart';
 import '../constants/app_design.dart';
-import '../widgets/header_widget.dart';
-import '../widgets/driver/card/driver_card_widget.dart';
+import '../components/header_widget.dart';
+import '../components/driver/card/driver_card_widget.dart';
 import 'map_screen.dart';
 
 class HomeScreen extends StatelessWidget {

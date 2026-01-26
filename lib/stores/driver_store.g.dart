@@ -134,6 +134,24 @@ mixin _$DriverStore on _DriverStore, Store {
     );
   }
 
+  late final _$hasEmergencyAtom = Atom(
+    name: '_DriverStore.hasEmergency',
+    context: context,
+  );
+
+  @override
+  bool get hasEmergency {
+    _$hasEmergencyAtom.reportRead();
+    return super.hasEmergency;
+  }
+
+  @override
+  set hasEmergency(bool value) {
+    _$hasEmergencyAtom.reportWrite(value, super.hasEmergency, () {
+      super.hasEmergency = value;
+    });
+  }
+
   late final _$_DriverStoreActionController = ActionController(
     name: '_DriverStore',
     context: context,
@@ -195,6 +213,7 @@ selectedDriverIds: ${selectedDriverIds},
 followingDriverId: ${followingDriverId},
 driversStream: ${driversStream},
 isDriverCardsExpanded: ${isDriverCardsExpanded},
+hasEmergency: ${hasEmergency},
 disponiveisNoRaio: ${disponiveisNoRaio},
 emEntrega: ${emEntrega},
 driversSelected: ${driversSelected}

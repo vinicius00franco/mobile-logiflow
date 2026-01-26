@@ -6,10 +6,10 @@ import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
 import '../stores/driver_store.dart';
 import '../constants/map_constants.dart';
-import '../widgets/driver/driver_list_widget.dart';
-import '../widgets/map_layers_widget.dart';
-import '../widgets/driver/driver_progress_bar.dart';
-import '../widgets/driver/select_driver_modal.dart';
+import '../components/driver/driver_list_widget.dart';
+import '../components/map_layers_widget.dart';
+import '../components/driver/driver_progress_bar.dart';
+import '../components/driver/select_driver_modal.dart';
 import '../constants/app_design.dart';
 
 // Tela do mapa que exibe a localização dos motoristas e permite interação com o mapa
