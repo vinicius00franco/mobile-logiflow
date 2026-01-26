@@ -95,14 +95,16 @@ class DriverCardCompact extends StatelessWidget {
                                   DriverInfoSection(
                                     icon: Icons.location_on,
                                     title: 'Posição Atual',
-                                    subtitle: driver.posicaoEndereco ??
+                                    subtitle:
+                                        driver.posicaoEndereco ??
                                         _formatCoordinates(driver.posicao),
                                   ),
                                   const SizedBox(height: AppSpacing.sm),
                                   DriverInfoSection(
                                     icon: Icons.trip_origin,
                                     title: 'Origem',
-                                    subtitle: driver.origemEndereco ??
+                                    subtitle:
+                                        driver.origemEndereco ??
                                         _formatCoordinates(driver.origem),
                                     color: AppColors.disponivel,
                                   ),
@@ -110,7 +112,8 @@ class DriverCardCompact extends StatelessWidget {
                                   DriverInfoSection(
                                     icon: Icons.place,
                                     title: 'Destino',
-                                    subtitle: driver.destinoEndereco ??
+                                    subtitle:
+                                        driver.destinoEndereco ??
                                         _formatCoordinates(driver.destino),
                                     color: AppColors.emergencia,
                                   ),
@@ -121,10 +124,7 @@ class DriverCardCompact extends StatelessWidget {
                                     child: OutlinedButton.icon(
                                       onPressed: () =>
                                           _showAddressHistory(context),
-                                      icon: const Icon(
-                                        Icons.history,
-                                        size: 16,
-                                      ),
+                                      icon: const Icon(Icons.history, size: 16),
                                       label: Text(
                                         'Ver Histórico (${driver.historicoEnderecos.length})',
                                         style: const TextStyle(

@@ -81,8 +81,9 @@ class _DriverListWidgetState extends State<DriverListWidget> {
                   itemCount: widget.drivers.length,
                   itemBuilder: (context, index) {
                     final driver = widget.drivers[index];
-                    final isSelected =
-                        widget.selectedDriverIds.contains(driver.id);
+                    final isSelected = widget.selectedDriverIds.contains(
+                      driver.id,
+                    );
 
                     // Padding dinâmico: maior nas extremidades para centralizar
                     return Padding(
