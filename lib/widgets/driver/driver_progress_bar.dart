@@ -29,7 +29,9 @@ class DriverProgressBar extends StatelessWidget {
             height: 8,
             width: isActive ? 30 : 12,
             decoration: BoxDecoration(
-              color: isActive ? AppColors.progressActive : AppColors.progressInactive,
+              color: isActive
+                  ? AppColors.progressActive
+                  : AppColors.progressInactive,
               borderRadius: BorderRadius.circular(4),
             ),
           );

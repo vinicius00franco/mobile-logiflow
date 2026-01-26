@@ -21,7 +21,9 @@ class AppColors {
 
   // Component colors
   static const progressActive = Color(0xFF2196F3); // Azul padrão para progresso
-  static const progressInactive = Color(0xFFE0E0E0); // Cinza claro para progresso inativo
+  static const progressInactive = Color(
+    0xFFE0E0E0,
+  ); // Cinza claro para progresso inativo
 
   // Shadows (alpha variations)
   static const shadow15 = Color(0x0F000000); // preto com alpha 15

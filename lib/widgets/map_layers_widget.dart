@@ -58,10 +58,7 @@ class MapLayersWidget extends StatelessWidget {
                     color: AppColors.cardBackground,
                     borderRadius: BorderRadius.circular(4),
                     boxShadow: [
-                      BoxShadow(
-                        color: AppColors.shadow50,
-                        blurRadius: 4,
-                      ),
+                      BoxShadow(color: AppColors.shadow50, blurRadius: 4),
                     ],
                   ),
                   child: Text(
@@ -76,9 +73,7 @@ class MapLayersWidget extends StatelessWidget {
                   _getVehicleIconData(driver.veiculo),
                   color: getStatusColor(driver.status),
                   size: 32,
-                  shadows: [
-                    Shadow(color: AppColors.shadow100, blurRadius: 4),
-                  ],
+                  shadows: [Shadow(color: AppColors.shadow100, blurRadius: 4)],
                 ),
               ],
             ),
@@ -98,11 +93,13 @@ class MapLayersWidget extends StatelessWidget {
               color: markerColors['origin']!,
               shape: BoxShape.circle,
               border: Border.all(color: AppColors.cardBackground, width: 2),
-              boxShadow: [
-                BoxShadow(color: AppColors.shadow50, blurRadius: 4),
-              ],
+              boxShadow: [BoxShadow(color: AppColors.shadow50, blurRadius: 4)],
             ),
-            child: Icon(Icons.location_on, color: AppColors.textLight, size: 20),
+            child: Icon(
+              Icons.location_on,
+              color: AppColors.textLight,
+              size: 20,
+            ),
           ),
         ),
       );
@@ -118,9 +115,7 @@ class MapLayersWidget extends StatelessWidget {
               color: markerColors['destination']!,
               shape: BoxShape.circle,
               border: Border.all(color: AppColors.cardBackground, width: 2),
-              boxShadow: [
-                BoxShadow(color: AppColors.shadow50, blurRadius: 4),
-              ],
+              boxShadow: [BoxShadow(color: AppColors.shadow50, blurRadius: 4)],
             ),
             child: Icon(Icons.flag, color: AppColors.textLight, size: 20),
           ),

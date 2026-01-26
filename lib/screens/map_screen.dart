@@ -227,7 +227,10 @@ class _MapScreenState extends State<MapScreen> {
                           onPressed: _changeMapStyle,
                           backgroundColor: AppColors.cardBackground,
                           tooltip: 'Alterar estilo do mapa',
-                          child: const Icon(Icons.map, color: AppColors.primary),
+                          child: const Icon(
+                            Icons.map,
+                            color: AppColors.primary,
+                          ),
                         ),
                         const SizedBox(height: 8),
                         // Botão flutuante para seguir motorista
