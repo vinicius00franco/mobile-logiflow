@@ -284,6 +284,7 @@ class _MapScreenState extends State<MapScreen> {
                   DriverListWidget(
                     drivers: driverStore.drivers,
                     selectedDriverIds: driverStore.selectedDriverIds,
+                    driverStore: driverStore,
                     pageController: _pageController,
                     onPageChanged: (index) {
                       setState(() {

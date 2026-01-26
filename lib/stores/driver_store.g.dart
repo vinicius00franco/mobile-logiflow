@@ -112,6 +112,28 @@ mixin _$DriverStore on _DriverStore, Store {
     );
   }
 
+  late final _$isDriverCardsExpandedAtom = Atom(
+    name: '_DriverStore.isDriverCardsExpanded',
+    context: context,
+  );
+
+  @override
+  bool get isDriverCardsExpanded {
+    _$isDriverCardsExpandedAtom.reportRead();
+    return super.isDriverCardsExpanded;
+  }
+
+  @override
+  set isDriverCardsExpanded(bool value) {
+    _$isDriverCardsExpandedAtom.reportWrite(
+      value,
+      super.isDriverCardsExpanded,
+      () {
+        super.isDriverCardsExpanded = value;
+      },
+    );
+  }
+
   late final _$_DriverStoreActionController = ActionController(
     name: '_DriverStore',
     context: context,
@@ -142,12 +164,37 @@ mixin _$DriverStore on _DriverStore, Store {
   }
 
   @override
+  void toggleDriverCardsExpansion() {
+    final _$actionInfo = _$_DriverStoreActionController.startAction(
+      name: '_DriverStore.toggleDriverCardsExpansion',
+    );
+    try {
+      return super.toggleDriverCardsExpansion();
+    } finally {
+      _$_DriverStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setDriverCardsExpanded(bool expanded) {
+    final _$actionInfo = _$_DriverStoreActionController.startAction(
+      name: '_DriverStore.setDriverCardsExpanded',
+    );
+    try {
+      return super.setDriverCardsExpanded(expanded);
+    } finally {
+      _$_DriverStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 drivers: ${drivers},
 selectedDriverIds: ${selectedDriverIds},
 followingDriverId: ${followingDriverId},
 driversStream: ${driversStream},
+isDriverCardsExpanded: ${isDriverCardsExpanded},
 disponiveisNoRaio: ${disponiveisNoRaio},
 emEntrega: ${emEntrega},
 driversSelected: ${driversSelected}

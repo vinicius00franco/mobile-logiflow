@@ -57,6 +57,10 @@ abstract class _DriverStore with Store {
   @observable
   late ObservableStream<List<Driver>> driversStream;
 
+  // Estado global de expansão dos cards de motoristas (sincronizado entre todos)
+  @observable
+  bool isDriverCardsExpanded = false;
+
   StreamSubscription<List<Driver>>? _streamSub;
   late ReactionDisposer _emergencyDisposer;
 
@@ -224,6 +228,18 @@ abstract class _DriverStore with Store {
     } else {
       followingDriverId = driverId; // Começa a seguir
     }
+  }
+
+  // Alterna o estado de expansão global dos cards de motoristas
+  @action
+  void toggleDriverCardsExpansion() {
+    isDriverCardsExpanded = !isDriverCardsExpanded;
+  }
+
+  // Define diretamente o estado de expansão global
+  @action
+  void setDriverCardsExpanded(bool expanded) {
+    isDriverCardsExpanded = expanded;
   }
 
   Future<void> _fetchRouteForDriver(int index) async {
